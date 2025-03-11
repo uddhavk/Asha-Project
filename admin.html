@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASHA Records Dashboard - Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+    <script>
+        function openTab(evt, tabName) {
+            let tabcontent = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            let tablinks = document.getElementsByClassName("tab-link");
+            for (let i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</head>
+<body>
+
+    <div class="admin-container">
+        <h2>ASHA Records Dashboard</h2>
+
+        <!-- Filters -->
+        <div class="filters">
+            <label>Select ASHA:</label>
+            <select>
+                <option>All ASHAs</option>
+                <option>Sevika A</option>
+                <option>Sevika B</option>
+            </select>
+
+            <label>Select Month:</label>
+            <select>
+                <option>All Months</option>
+                <option>January</option>
+                <option>February</option>
+                <option>March</option>
+                <option>April</option>
+                <option>May</option>
+                <option>June</option>
+                <option>July</option>
+                <option>August</option>
+                <option>September</option>
+                <option>October</option>
+                <option>November</option>
+                <option>December</option>
+            </select>
+
+            <button>Filter</button>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="tab">
+            <button class="tab-link active" onclick="openTab(event, 'admin')">New Asha Register</button>
+            <button class="tab-link active" onclick="openTab(event, 'maternal')">Maternal & Child Health</button>
+            <button class="tab-link" onclick="openTab(event, 'family')">Family Planning</button>
+            <button class="tab-link" onclick="openTab(event, 'diseases')">Diseases</button>
+            <button class="tab-link" onclick="openTab(event, 'nutrition')">Nutrition</button>
+            <button class="tab-link" onclick="openTab(event, 'sanitation')">Sanitation</button>
+            <button class="tab-link" onclick="openTab(event, 'awareness')">Health Awareness</button>
+        </div>
+        <!-- Maternal & Child Health -->
+        <div id="admin" class="tab-content" style="display: block;">
+            <h3>New Asha Register</h3>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Education</th>
+                    <th>Location</th>
+                    <th>Area Population</th>
+                    <th>Experience</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>Asha1</td>
+                    <td>45</td>
+                    <td>12th</td>
+                    <td>loni</td>
+                    <td>200</td>
+                    <td>5 years</td>
+                    <td>
+                        <button>Approve</button>
+                        <button>Reject</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+        <!-- Maternal & Child Health -->
+        <div id="maternal" class="tab-content" style="display: block;">
+            <h3>Maternal & Child Health Records</h3>
+            <table>
+                <tr>
+                    <th>ASHA Name</th>
+                    <th>Month</th>
+                    <th>Pregnancies</th>
+                    <th>Births Registered</th>
+                    <th>Newborns Immunized</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>Sevika A</td>
+                    <td>January</td>
+                    <td>12</td>
+                    <td>8</td>
+                    <td>25</td>
+                    <td>Pending</td>
+                    <td>
+                        <button>Approve</button>
+                        <button>Reject</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Family Planning -->
+        <div id="family" class="tab-content">
+            <h3>Family Planning Records</h3>
+            <table>
+                <tr>
+                    <th>ASHA Name</th>
+                    <th>Month</th>
+                    <th>Contraceptive Users</th>
+                    <th>Family Planning Sessions</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>Sevika B</td>
+                    <td>January</td>
+                    <td>35</td>
+                    <td>10</td>
+                    <td>Approved</td>
+                    <td>
+                        <button>View</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Diseases -->
+        <div id="diseases" class="tab-content">
+            <h3>Disease Monitoring Records</h3>
+            <table>
+                <tr>
+                    <th>ASHA Name</th>
+                    <th>Month</th>
+                    <th>TB Cases</th>
+                    <th>Malaria Cases</th>
+                    <th>HIV/AIDS Cases</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>Sevika C</td>
+                    <td>February</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>Pending</td>
+                    <td>
+                        <button>Approve</button>
+                        <button>Reject</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- More categories like Nutrition, Sanitation, and Health Awareness follow the same table format -->
+
+    </div>
+
+</body>
+</html>

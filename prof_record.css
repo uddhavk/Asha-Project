@@ -1,0 +1,82 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    text-align: center;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Form Container */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Styling */
+form {
+    text-align: left;
+    margin-top: 20px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background: #00c9a7;
+    color: white;
+    padding: 10px;
+    margin-top: 15px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #008f7a;
+}
+
+/* Tabs */
+.tab {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.tab button {
+    background-color: #ddd;
+    float: left;
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.tab button:hover {
+    background-color: #ccc;
+}
+
+.tab button.active {
+    background-color: #00c9a7;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}

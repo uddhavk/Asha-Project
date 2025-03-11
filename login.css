@@ -1,0 +1,90 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #8EC5FC, #E0C3FC);
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Form Container */
+.container {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Headings */
+h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #6A11CB;
+    outline: none;
+    box-shadow: 0 0 5px rgba(106, 17, 203, 0.7);
+}
+
+/* Submit Button */
+.btn-primary {
+    background: #6A11CB;
+    color: white;
+    font-size: 18px;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #4A00E0;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background: linear-gradient(135deg, #333, #555);
+    color: white;
+}
+
+.dark-mode .container {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.dark-mode .form-control {
+    background: #444;
+    color: white;
+    border: 1px solid #666;
+}
+
+.dark-mode .form-control:focus {
+    border-color: #6A11CB;
+    box-shadow: 0 0 5px rgba(106, 17, 203, 0.7);
+}
+
+.dark-mode .btn-primary {
+    background: #4A00E0;
+}
+
+.dark-mode .btn-primary:hover {
+    background: #3800A1;
+}

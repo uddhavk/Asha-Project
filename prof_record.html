@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASHA Dashboard</title>
+    <link rel="stylesheet" href="prof_record.css">
+    <script>
+        function showRecords() {
+            document.getElementById("profile-section").style.display = "none";
+            document.getElementById("records-section").style.display = "block";
+        }
+
+        function openTab(evt, tabName) {
+            let tabcontent = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            let tablinks = document.getElementsByClassName("tab-link");
+            for (let i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.classList.add("active");
+        }
+        
+        function previewImage(event) {
+            let reader = new FileReader();
+            reader.onload = function() {
+                let output = document.getElementById('profile-pic');
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <!-- ASHA Profile Section -->
+        <div id="profile-section">
+            <h2>ASHA Worker Profile</h2>
+            
+           
+            <p><strong>Name:</strong> <span id="name">Loading...</span></p>
+            <p><strong>Age:</strong> <span id="age">Loading...</span></p>
+            <p><strong>Education:</strong> <span id="education">Loading...</span></p>
+            <p><strong>Location:</strong> <span id="location">Loading...</span></p>
+            <p><strong>Area Population:</strong> <span id="population">Loading...</span></p>
+            <p><strong>Working Experience:</strong> <span id="experience">Loading...</span></p>
+            <button onclick="showRecords()">View/Add Records</button>
+        </div>
+
+        <!-- Health Records Section -->
+        <div id="records-section" style="display: none;">
+            <h2>ASHA Worker Monthly Health Records</h2>
+
+            <!-- Month Selection -->
+            <label for="month">Select Month:</label>
+            <select id="month">
+                <option>January</option>
+                <option>February</option>
+                <option>March</option>
+                <option>April</option>
+                <option>May</option>
+                <option>June</option>
+                <option>July</option>
+                <option>August</option>
+                <option>September</option>
+                <option>October</option>
+                <option>November</option>
+                <option>December</option>
+            </select>
+
+            <!-- Tab Navigation -->
+            <div class="tab">
+                <button class="tab-link active" onclick="openTab(event, 'maternal')">Maternal & Child Health</button>
+                <button class="tab-link" onclick="openTab(event, 'family')">Family Planning</button>
+                <button class="tab-link" onclick="openTab(event, 'diseases')">Diseases</button>
+                <button class="tab-link" onclick="openTab(event, 'nutrition')">Nutrition</button>
+                <button class="tab-link" onclick="openTab(event, 'sanitation')">Sanitation</button>
+                <button class="tab-link" onclick="openTab(event, 'awareness')">Health Awareness</button>
+            </div>
+
+            <!-- Maternal & Child Health -->
+            <div id="maternal" class="tab-content" style="display: block;">
+                <h3>Maternal & Child Health</h3>
+                <form>
+                    <label>Pregnant Women Registered:</label>
+                    <input type="number">
+                    <label>Births Registered:</label>
+                    <input type="number">
+                    <label>Newborns Immunized:</label>
+                    <input type="number">
+                    <button type="submit">Save</button>
+                </form>
+            </div>
+            <div id="family" class="tab-content">
+                <h3>Family Planning</h3>
+                <form>
+                    <label>Number of Eligible Couples:</label>
+                    <input type="number" required>
+                    <label>Using Contraception:</label>
+                    <select>
+                        <option>Pills</option>
+                        <option>Condoms</option>
+                        <option>IUD</option>
+                        <option>Sterilization</option>
+                    </select>
+                    <button type="submit">Save</button>
+                </form>
+            </div>
+             <!-- Communicable & Non-Communicable Diseases -->
+        <div id="diseases" class="tab-content">
+            <h3>Disease Tracking</h3>
+            <form>
+                <label>TB Cases Identified:</label>
+                <input type="number">
+                <label>Malaria/Dengue Cases:</label>
+                <input type="number">
+                <label>Diabetes/Hypertension Cases:</label>
+                <input type="number">
+                <label>HIV/AIDS Cases:</label>
+                <input type="number">
+                <button type="submit">Save</button>
+            </form>
+        </div>
+        <!-- Nutrition -->
+        <div id="nutrition" class="tab-content">
+            <h3>Nutrition & Supplementation</h3>
+            <form>
+                <label>Iron & Folic Acid Distributed:</label>
+                <input type="number">
+                <label>Vitamin A Supplements Given:</label>
+                <input type="number">
+                <button type="submit">Save</button>
+            </form>
+        </div>
+        <!-- Sanitation -->
+        <div id="sanitation" class="tab-content">
+            <h3>Sanitation & Hygiene</h3>
+            <form>
+                <label>Households with Toilets:</label>
+                <input type="number">
+                <label>Clean Water Availability:</label>
+                <select>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+
+        <!-- Health Awareness -->
+        <div id="awareness" class="tab-content">
+            <h3>Health Awareness</h3>
+            <form>
+                <label>Health Awareness Programs Conducted:</label>
+                <input type="number">
+                <button type="submit">Save</button>
+            </form>
+        </div>
+
+        <!-- Village Reports -->
+        <div id="village" class="tab-content">
+            <h3>Village Health Reports</h3>
+            <form>
+                <label>Households Surveyed:</label>
+                <input type="number">
+                <label>Health Reports Submitted:</label>
+                <input type="number">
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+
+
+        </div>
+    </div>
+
+</body>
+</html>
